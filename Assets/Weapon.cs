@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour {
     public LayerMask whatToHit;
     public GameObject inkBallPrefab;
 
-    float timeToFire = 0;
+    //float timeToFire = 0;
     Transform firePoint;
 
     // Use this for initialization
@@ -46,8 +46,8 @@ public class Weapon : MonoBehaviour {
 
         void Effect(Vector2 dir) {
             //Instantiate (BulletTrailPrefab, firePoint, firePoint.rotation);
-            Vector2 p = new Vector2(firePoint.position.x, firePoint.position.y);
-            Quaternion r = new Quaternion(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z, firePoint.rotation.w);
+            // Vector2 p = new Vector2(firePoint.position.x, firePoint.position.y);
+            // Quaternion r = new Quaternion(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z, firePoint.rotation.w);
             // Debug.Log("rotate " + r);
             // Debug.Log("fp rotate " + firePoint.rotation);
             Quaternion ray = new Quaternion(dir.x, dir.y, 0, 0);

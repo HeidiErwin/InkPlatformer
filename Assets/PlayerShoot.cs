@@ -21,7 +21,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Fire()
     {
-        var ball = (GameObject)Instantiate(
+        inkBall = (GameObject)Instantiate(
             inkBall, this.transform.position, inkBall.transform.rotation);
     }
 
