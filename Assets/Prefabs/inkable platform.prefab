@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61108819170152150}
   - component: {fileID: 114171974659259350}
   m_Layer: 9
-  m_Name: brgd background (3)
+  m_Name: inkable platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181987984248880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.46, y: 1.287, z: 0}
-  m_LocalScale: {x: 0.025431314, y: 0.35442832, z: 1}
+  m_LocalPosition: {x: 6.376954, y: 20.547256, z: 0}
+  m_LocalScale: {x: 0.025431314, y: 0.044303473, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
