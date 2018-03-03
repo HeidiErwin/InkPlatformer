@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour {
 
             //Debug.Log(p);
             var b = (GameObject)Instantiate(inkBallPrefab, firePoint.position, ray);
-            b.GetComponent<InkBallScript>().setDirection(dir);
+            b.GetComponent<InkBallScript>().SetDirection(dir);
         }
     }
 
