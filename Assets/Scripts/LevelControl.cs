@@ -21,14 +21,6 @@ public class LevelControl : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        //restart level if R pressed
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(levelIndex);
-        }
-    }
 }
 
 // NOTE: To assign indeces to levels:
