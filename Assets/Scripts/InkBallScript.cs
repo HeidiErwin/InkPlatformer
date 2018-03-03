@@ -11,6 +11,7 @@ public class InkBallScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // layer 8 is the player layer
         Physics2D.IgnoreLayerCollision(gameObject.layer, 8, true);
     }
 
@@ -21,7 +22,7 @@ public class InkBallScript : MonoBehaviour
         transform.Translate(direction * Time.deltaTime * moveSpeed);
     }
 
-    public void setDirection(Vector2 dir)
+    public void SetDirection(Vector2 dir)
     {
         direction = new Vector2(dir.x, dir.y);
     }
