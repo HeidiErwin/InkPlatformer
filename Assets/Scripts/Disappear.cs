@@ -7,11 +7,15 @@ public class Disappear : MonoBehaviour
     public float Seconds = 3;
     private SpriteRenderer m_SpriteRenderer;
     public BoxCollider2D bc;
-    private bool solidified = true;
+    private bool solidified = false;
+
+    private float dripTimer;
+    public float dripTimerMax;
+
     void Start()
     {
        m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        bc = GetComponent<BoxCollider2D>();
+       bc = GetComponent<BoxCollider2D>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +35,7 @@ public class Disappear : MonoBehaviour
             solidified = true;
         }
     }
+
     IEnumerator Unsolidify()
     {
         yield return new WaitForSeconds(Seconds);
@@ -38,6 +43,7 @@ public class Disappear : MonoBehaviour
         gameObject.layer = 11;
         m_SpriteRenderer.color = Color.red;
     }
+
     IEnumerator KillBlock()
     {
         yield return new WaitForSeconds(Seconds);
