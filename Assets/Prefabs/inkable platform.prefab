@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4090012972924460}
   - component: {fileID: 212915534248913230}
   - component: {fileID: 61108819170152150}
-  - component: {fileID: 114171974659259350}
+  - component: {fileID: 114093700997260652}
   m_Layer: 9
   m_Name: inkable platform
   m_TagString: Untagged
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181987984248880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.376954, y: 20.547256, z: 0}
-  m_LocalScale: {x: 0.025431314, y: 0.044303473, z: 1}
+  m_LocalPosition: {x: -4.883, y: -4.226, z: -2.31}
+  m_LocalScale: {x: -0.015191083, y: 0.025164723, z: 0.56080985}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 48, y: 27}
   m_EdgeRadius: 0
---- !u!114 &114171974659259350
+--- !u!114 &114093700997260652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,12 +75,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181987984248880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f00c57793d21641876b9302c8f969e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e6460e2ab27afc44b2ced4a79823cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Seconds: 1
-  bc: {fileID: 0}
-  dripTimerMax: 0
+  dripTimerMax: 3
+  inkBallPrefab: {fileID: 1899466151972870, guid: 2934cdfc276625c45af76e5769517c01,
+    type: 2}
 --- !u!212 &212915534248913230
 SpriteRenderer:
   m_ObjectHideFlags: 1
