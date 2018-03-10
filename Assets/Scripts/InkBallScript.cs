@@ -5,7 +5,7 @@ using UnityEngine;
 public class InkBallScript : MonoBehaviour
 {
 
-    public int moveSpeed = 10;
+    public int moveSpeed = 20;
     Vector3 direction;
 
     // Use this for initialization

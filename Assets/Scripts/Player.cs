@@ -1,4 +1,8 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
@@ -52,12 +56,27 @@ public class Player : MonoBehaviour
         {
             velocity.y = 0f;
         }
+
+		if (this.transform.position.y < -10) {
+			Death ();
+		}
     }
 
     public void SetDirectionalInput(Vector2 input)
     {
         directionalInput = input;
     }
+
+	public void Death() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		//print ("colliding");
+		if (other.gameObject.layer == 13) {
+			Death ();
+		}
+	}
 
     public void OnJumpInputDown()
     {

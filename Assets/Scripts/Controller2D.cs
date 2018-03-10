@@ -3,7 +3,7 @@
 public class Controller2D : RaycastController
 {
     public float fallingThroughPlatformResetTimer = 0.1f;
-    private float maxClimbAngle = 80f;
+    private float maxClimbAngle = 0f;
     private float maxDescendAngle = 80f;
 
     public CollisionInfo collisions;
