@@ -8,7 +8,6 @@ public class Disappear : MonoBehaviour
     private SpriteRenderer m_SpriteRenderer;
     public BoxCollider2D bc;
     private bool solidified = false;
-
     private float dripTimer;
     public float dripTimerMax;
 

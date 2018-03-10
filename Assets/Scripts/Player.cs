@@ -71,12 +71,15 @@ public class Player : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
-	public void OnTriggerEnter2D(Collider2D other) {
-		//print ("colliding");
-		if (other.gameObject.layer == 12) {
-			Death ();
-		}
-	}
+	//this was gonna handle spikes
+//	public void OnTriggerEnter2D(Collider2D other) {
+//		//print ("colliding");
+//		if (other.gameObject.layer == 12) {
+//			Disappear d = other.gameObject.GetComponent<Disappear>();
+//			//Debug.Log (d.solid);
+//			//Death ();
+//		}
+//	}
 
     public void OnJumpInputDown()
     {
