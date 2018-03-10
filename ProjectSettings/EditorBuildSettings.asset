@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/test.unity
     guid: 92a9ad6630ecd994ea1e80c417ee5b2b
+  - enabled: 1
+    path: Assets/Scenes/ashley.unity
+    guid: 4e4f0a9aabdcf423aadae6f021beac40
+  - enabled: 1
+    path: Assets/Scenes/timer.unity
+    guid: a5c118bae7898ef448a693b90c6602ee
