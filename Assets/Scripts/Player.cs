@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
 	public void OnTriggerEnter2D(Collider2D other) {
 		//print ("colliding");
-		if (other.gameObject.layer == 13) {
+		if (other.gameObject.layer == 12) {
 			Death ();
 		}
 	}
