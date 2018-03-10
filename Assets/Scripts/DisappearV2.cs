@@ -44,7 +44,7 @@ public class DisappearV2 : MonoBehaviour
         Vector3 pos = gameObject.transform.position;
         pos.y = pos.y - gameObject.transform.localScale.y - inkBallPrefab.transform.localScale.y - 0.4f;
         var b = (GameObject)Instantiate(inkBallPrefab, pos, ray);
-        b.GetComponent<InkBallScript>().setDirection(dir);
+        b.GetComponent<InkBallScript>().SetDirection(dir);
     }
 
     void OnTriggerEnter2D(Collider2D other)
