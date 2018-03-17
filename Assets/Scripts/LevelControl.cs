@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelControl : MonoBehaviour
 {
     //keeps track of the index of the current level
-    private int levelIndex;
+    //private int levelIndex;
 
     //switching levels when goal reached
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,8 +16,8 @@ public class LevelControl : MonoBehaviour
         // layer 8 is player; if this object contacts the player then go to the next level
         if (collision.gameObject.layer == 8)
         {
-            SceneManager.LoadScene(levelIndex + 1);
-            levelIndex++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //levelIndex++;
         }
     }
 
