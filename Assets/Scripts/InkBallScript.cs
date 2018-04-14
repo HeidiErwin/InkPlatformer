@@ -8,6 +8,11 @@ public class InkBallScript : MonoBehaviour
     public int moveSpeed = 20;
     Vector3 direction;
 
+    void Awake()
+    {
+        Destroy(gameObject, 10f);
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -27,6 +32,7 @@ public class InkBallScript : MonoBehaviour
         direction = new Vector2(dir.x, dir.y);
     }
 
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 9)
@@ -34,11 +40,13 @@ public class InkBallScript : MonoBehaviour
             Destroy(gameObject, 0.05f);
         }
     }
+    */
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.layer == 9 || collider.gameObject.layer == 11)
         {
-            Destroy(gameObject, 0.05f);
+            Destroy(gameObject);
         }
     }
 

@@ -42,7 +42,8 @@ public class DisappearV2 : MonoBehaviour
         Quaternion ray = new Quaternion(0, -1, 0, 0);
         Vector2 dir = new Vector2(0, -1);
         Vector3 pos = gameObject.transform.position;
-        pos.y = pos.y - gameObject.transform.localScale.y - inkBallPrefab.transform.localScale.y - 0.4f;
+        float boxOffset = gameObject.transform.lossyScale.y * gameObject.GetComponent<BoxCollider2D>().size.y / 2;
+        pos.y = pos.y - gameObject.transform.localScale.y - inkBallPrefab.GetComponent<CircleCollider2D>().radius - boxOffset;
         var b = (GameObject)Instantiate(inkBallPrefab, pos, ray);
         b.GetComponent<InkBallScript>().SetDirection(dir);
     }
