@@ -21,10 +21,10 @@ public class WeaponDec : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (Manager.inkwell > 0) {
+		if (InkManager.Instance.InkRemaining > 0) {
 			if (Input.GetMouseButtonDown(0)) {
 				Shoot();
-				Manager.inkwell--;
+				InkManager.Instance.DecrementInk();
 			}
 		} else {
 
