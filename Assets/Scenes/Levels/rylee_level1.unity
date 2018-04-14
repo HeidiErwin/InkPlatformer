@@ -205,6 +205,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.33781308
       objectReference: {fileID: 0}
+    - target: {fileID: 1749983910026472, guid: 63644bd859ba09a45a29a6ad8e26d730, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63644bd859ba09a45a29a6ad8e26d730, type: 2}
   m_IsPrefabParent: 0
@@ -246,6 +250,10 @@ Prefab:
     - target: {fileID: 4090012972924460, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
       propertyPath: m_RootOrder
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181987984248880, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
@@ -480,6 +488,10 @@ Prefab:
     - target: {fileID: 1181987984248880, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
       propertyPath: m_Name
       value: inkable platform (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181987984248880, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
@@ -1571,7 +1583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c93c651e2b524864bd43af7bdbe168d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InkMax: 10
+  InkMax: 6
 --- !u!4 &1398715551
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,6 +1862,31 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ff3ccce3f970f74e803cb03c12e808b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1673536392 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1749983910026472, guid: 63644bd859ba09a45a29a6ad8e26d730,
+    type: 2}
+  m_PrefabInternal: {fileID: 55584048}
+--- !u!50 &1673536393
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673536392}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1701515713
 Prefab:
   m_ObjectHideFlags: 0
