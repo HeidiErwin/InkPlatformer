@@ -27,6 +27,7 @@ public class InkBallScript : MonoBehaviour
         direction = new Vector2(dir.x, dir.y);
     }
 
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 9)
@@ -34,11 +35,13 @@ public class InkBallScript : MonoBehaviour
             Destroy(gameObject, 0.05f);
         }
     }
+    */
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.layer == 9 || collider.gameObject.layer == 11)
         {
-            Destroy(gameObject, 0.05f);
+            Destroy(gameObject);
         }
     }
 
