@@ -8,6 +8,11 @@ public class InkBallScript : MonoBehaviour
     public int moveSpeed = 20;
     Vector3 direction;
 
+    void Awake()
+    {
+        Destroy(gameObject, 10f);
+    }
+
     // Use this for initialization
     void Start()
     {
