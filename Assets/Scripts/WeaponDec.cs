@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponDec : MonoBehaviour {
 
 	public float Damage = 10;
-	public float inkwell = 10;
 	public LayerMask whatToHit;
 	public GameObject inkBallPrefab;
 
@@ -22,10 +21,10 @@ public class WeaponDec : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (inkwell > 0) {
+		if (Manager.inkwell > 0) {
 			if (Input.GetMouseButtonDown(0)) {
 				Shoot();
-				inkwell--;
+				Manager.inkwell--;
 			}
 		} else {
 
