@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     private bool wallSliding;
     private int wallDirX;
 
+    private bool showRestartPopup = false;
+
     private void Start()
     {
         controller = GetComponent<Controller2D>();
@@ -69,18 +71,25 @@ public class Player : MonoBehaviour
     }
 
 	public void Death() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        showRestartPopup = true;
+		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
-	//this was gonna handle spikes
-//	public void OnTriggerEnter2D(Collider2D other) {
-//		//print ("colliding");
-//		if (other.gameObject.layer == 12) {
-//			Disappear d = other.gameObject.GetComponent<Disappear>();
-//			//Debug.Log (d.solid);
-//			//Death ();
-//		}
-//	}
+    void OnGUI()
+    {
+        if (showRestartPopup)
+            GUI.Label(new Rect(20, Screen.height-50, 100, 100), "Press 'R' to Restart Level");
+    }
+
+    //this was gonna handle spikes
+    //	public void OnTriggerEnter2D(Collider2D other) {
+    //		//print ("colliding");
+    //		if (other.gameObject.layer == 12) {
+    //			Disappear d = other.gameObject.GetComponent<Disappear>();
+    //			//Debug.Log (d.solid);
+    //			//Death ();
+    //		}
+    //	}
 
     public void OnJumpInputDown()
     {

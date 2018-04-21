@@ -10,4 +10,13 @@ public class MainMenu : MonoBehaviour {
 		Application.Quit ();
 	}
 
+    private void Update()
+    {
+        //open menu if ESC pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }
