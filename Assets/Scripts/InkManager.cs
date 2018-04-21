@@ -13,6 +13,16 @@ public class InkManager : MonoBehaviour {
 
     private void Start()
     {
+        if (inkSlider == null)
+        {
+            inkSlider = GameObject.Find("Inkwell").GetComponent<Slider>();
+        }
+        if (inkCounter == null)
+        {
+            inkCounter = GameObject.Find("Counter").GetComponent<Text>();
+        }
+
+        InkMax = 10;
         if(Instance == null)
         {
             Instance = this;
