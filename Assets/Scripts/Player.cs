@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
+	private bool jumpable = true;
 
     public float wallSlideSpeedMax = 3f;
     public float wallStickTime = .25f;
@@ -85,22 +86,31 @@ public class Player : MonoBehaviour
     {
         if (wallSliding)
         {
-            if (wallDirX == directionalInput.x)
-            {
-                velocity.x = -wallDirX * wallJumpClimb.x;
-                velocity.y = wallJumpClimb.y;
-            }
-            else if (directionalInput.x == 0)
-            {
-                velocity.x = -wallDirX * wallJumpOff.x;
-                velocity.y = wallJumpOff.y;
-            }
-            else
-            {
-                velocity.x = -wallDirX * wallLeap.x;
-                velocity.y = wallLeap.y;
-            }
-            isDoubleJumping = false;
+			if (jumpable) {
+				if (wallDirX == directionalInput.x) {
+					velocity.x = -wallDirX * wallJumpClimb.x;
+					velocity.y = wallJumpClimb.y;
+				} else if (directionalInput.x == 0) {
+					velocity.x = -wallDirX * wallJumpOff.x;
+					velocity.y = wallJumpOff.y;
+				} else {
+					velocity.x = -wallDirX * wallLeap.x;
+					velocity.y = wallLeap.y;
+				}
+				isDoubleJumping = false;
+			} else {
+				if (wallDirX == directionalInput.x) {
+					velocity.x = -wallDirX * wallJumpClimb.x;
+					velocity.y = 0;
+				} else if (directionalInput.x == 0) {
+					velocity.x = -wallDirX * wallJumpOff.x;
+					velocity.y = 0;
+				} else {
+					velocity.x = -wallDirX * wallLeap.x;
+					velocity.y = 0;
+				}
+				isDoubleJumping = false;
+			}
         }
         if (controller.collisions.below)
         {
@@ -161,4 +171,12 @@ public class Player : MonoBehaviour
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below ? accelerationTimeGrounded : accelerationTimeAirborne));
         velocity.y += gravity * Time.deltaTime;
     }
+
+	void OnTriggerEnter2D(Collider2D col) {
+		if (col.gameObject.layer == 13) {
+			jumpable = false;
+		} else {
+			jumpable = true;
+		}
+	}
 }
