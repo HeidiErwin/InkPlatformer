@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c93c651e2b524864bd43af7bdbe168d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InkMax: 7
+  InkMax: 10
 --- !u!4 &2077206481
 Transform:
   m_ObjectHideFlags: 0
