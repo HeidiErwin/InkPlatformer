@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// pretty sure this script is never used; instead, DisappearV2 used
 public class Disappear : MonoBehaviour
 {
     public float Seconds = 3;
