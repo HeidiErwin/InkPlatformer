@@ -44,7 +44,7 @@ public class InkBallScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.layer == 9 || collider.gameObject.layer == 11)
+        if (collider.gameObject.layer == 9 || collider.gameObject.layer == 11 || collider.gameObject.layer == 13)
         {
             Destroy(gameObject);
         }
