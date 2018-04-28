@@ -45,9 +45,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //source = GetComponent();
         controller = GetComponent<Controller2D>();
-        source = gameObject.AddComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
@@ -79,8 +78,10 @@ public class Player : MonoBehaviour
     }
 
 	public void Death() {
+        source.clip = deathSound;
+        source.Play();
         showRestartPopup = true;
-        source.PlayOneShot(deathSound, .4f);
+        source.PlayOneShot(deathSound, 1.0f);
         this.isDead = true;
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
