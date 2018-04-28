@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisappearV2 : MonoBehaviour
 {
-    private SpriteRenderer m_SpriteRenderer;
+    //private SpriteRenderer m_SpriteRenderer;
     private bool solidified = false;
     public bool dropWater = true;
     public float dropSpeed = 0.2f;
@@ -13,15 +13,17 @@ public class DisappearV2 : MonoBehaviour
     public float dripTimerMax = 3f;
     public GameObject inkBallPrefab;
     public GameObject waterPrefab;
+    private Animator animator;
 
     void Start()
     {
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        //m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         dripTimer = 0f;
         timerRunning = false;
         solidified = false;
         gameObject.layer = 11; // empty layer
-        m_SpriteRenderer.color = Color.red;
+        //m_SpriteRenderer.color = Color.red;
         if (dropWater)
         {
             InvokeRepeating("DropWater", 0.5f, dropSpeed);
@@ -32,6 +34,7 @@ public class DisappearV2 : MonoBehaviour
     void PlatformTimer()
     {
         dripTimer += Time.deltaTime;
+        DripAnimation();
         if (dripTimer > dripTimerMax)
         {
             // drop ink ball
@@ -40,7 +43,7 @@ public class DisappearV2 : MonoBehaviour
             timerRunning = false;
             solidified = false;
             gameObject.layer = 11; // empty layer
-            m_SpriteRenderer.color = Color.red;
+            //m_SpriteRenderer.color = Color.red;
             if (dropWater)
             {
                 InvokeRepeating("DropWater", 0.5f, dropSpeed);
@@ -77,9 +80,11 @@ public class DisappearV2 : MonoBehaviour
         // the Ink's layer
         if (other.gameObject.layer == 10)
         {
+            ResetDripAnimation();
+            animator.SetBool("isInked", true);
             CancelInvoke();
             timerRunning = true;
-            m_SpriteRenderer.color = Color.black;
+            //m_SpriteRenderer.color = Color.black;
             gameObject.layer = 9; // solidified block layer
             dripTimer = 0f;
             if (solidified)
@@ -100,6 +105,35 @@ public class DisappearV2 : MonoBehaviour
         if (timerRunning)
         {
             PlatformTimer();
+        }
+    }
+
+    private void ResetDripAnimation()
+    {
+        animator.Rebind();
+    }
+
+    private void DripAnimation()
+    {
+        if(0 <= dripTimer && dripTimer < dripTimerMax * 1 / 3)
+        {
+            animator.SetBool("drip1", true);
+        }
+        else if (dripTimerMax * 1/3 <= dripTimer && dripTimer < dripTimerMax * 2 / 3)
+        {
+            animator.SetBool("drip2", true);
+            animator.SetBool("drip1", false);
+        }
+        else if (dripTimerMax * 2/3 <= dripTimer && dripTimer < dripTimerMax)
+        {
+            animator.SetBool("drip3", true);
+            animator.SetBool("drip2", false);
+        }
+        else if (dripTimer >= dripTimerMax)
+        {
+            animator.SetBool("isInked", false);
+            animator.SetBool("dripDone", true);
+            animator.SetBool("drip3", false);
         }
     }
 }
