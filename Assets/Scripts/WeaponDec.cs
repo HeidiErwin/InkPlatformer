@@ -26,8 +26,6 @@ public class WeaponDec : MonoBehaviour {
 				Shoot();
 				InkManager.Instance.DecrementInk();
 			}
-		} else {
-
 		}
 	}
 
