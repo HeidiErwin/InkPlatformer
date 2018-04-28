@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
+
+    public bool isDead = false;
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
     public float timeToJumpApex = .4f;
@@ -53,7 +55,10 @@ public class Player : MonoBehaviour
         CalculateVelocity();
         HandleWallSliding();
 
-        controller.Move(velocity * Time.deltaTime, directionalInput);
+        if (!isDead)
+        {
+            controller.Move(velocity * Time.deltaTime, directionalInput);
+        }
 
         if (controller.collisions.above || controller.collisions.below)
         {
@@ -72,6 +77,7 @@ public class Player : MonoBehaviour
 
 	public void Death() {
         showRestartPopup = true;
+        this.isDead = true;
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
