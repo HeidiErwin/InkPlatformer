@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpikeDisappearV2 : MonoBehaviour
 {
-	private SpriteRenderer m_SpriteRenderer;
+    public Sprite NoInkSprite;
+    public Sprite InkSprite;
+
+    private SpriteRenderer m_SpriteRenderer;
 	private bool solidified = false;
 
 	private float dripTimer;
@@ -19,7 +22,7 @@ public class SpikeDisappearV2 : MonoBehaviour
 		timerRunning = false;
 		solidified = false;
 		gameObject.layer = 11; // empty layer
-		m_SpriteRenderer.color = Color.red;
+		m_SpriteRenderer.sprite = NoInkSprite;
 	}
 
 	void PlatformTimer()
@@ -33,7 +36,7 @@ public class SpikeDisappearV2 : MonoBehaviour
 			timerRunning = false;
 			solidified = false;
 			gameObject.layer = 11; // empty layer
-			m_SpriteRenderer.color = Color.red;
+			m_SpriteRenderer.sprite = NoInkSprite;
 		}
 	}
 
@@ -52,7 +55,7 @@ public class SpikeDisappearV2 : MonoBehaviour
 		// the Ink's layer
 		if (other.gameObject.layer == 10) {
 			timerRunning = true;
-			m_SpriteRenderer.color = Color.black;
+			m_SpriteRenderer.sprite = InkSprite;
 			gameObject.layer = 9; // solidified block layer
 			dripTimer = 0f;
 			if (solidified) {
