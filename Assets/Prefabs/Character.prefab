@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114093536181129914}
   - component: {fileID: 114295045119626778}
   - component: {fileID: 82208942381829486}
+  - component: {fileID: 114164840362699832}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -220,6 +221,18 @@ MonoBehaviour:
     m_Bits: 512
   inkBallPrefab: {fileID: 1899466151972870, guid: 2934cdfc276625c45af76e5769517c01,
     type: 2}
+--- !u!114 &114164840362699832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288178359901058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cc9a244913e43d0b479f6d84797781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
 --- !u!114 &114214524747607716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,6 +322,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -324,6 +338,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

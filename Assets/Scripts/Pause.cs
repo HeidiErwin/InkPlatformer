@@ -9,17 +9,17 @@ public class Pause : MonoBehaviour {
 
 	void Start(){
 		Canvas.gameObject.SetActive (false);
+		Time.timeScale = 1.0f;
+		Paused = false;
 	}
 
 	void Update () {
 		if (Input.GetKeyDown ("escape")) {
 			if(Paused == true){
-				Debug.Log ("yes");
 				Time.timeScale = 1.0f;
 				Canvas.gameObject.SetActive (false);
 				Paused = false;
 			} else {
-				Debug.Log ("no");
 				Time.timeScale = 0.0f;
 				Canvas.gameObject.SetActive (true);
 				Paused = true;
