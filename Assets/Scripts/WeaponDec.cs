@@ -21,7 +21,7 @@ public class WeaponDec : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (InkManager.Instance.InkRemaining > 0 && !Pause.Paused) {
+		if (InkManager.Instance.InkRemaining > 0 || !Pause.Paused) {
 			if (Input.GetMouseButtonDown(0)) {
 				Shoot();
 				InkManager.Instance.DecrementInk();

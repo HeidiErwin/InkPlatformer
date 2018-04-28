@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BgmPlayer : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class BgmPlayer : MonoBehaviour {
 		if (instance == null) {
 			instance = this;
 			DontDestroyOnLoad (gameObject);
-		} else if (instance != this) {
+		} else if (instance != this || SceneManager.GetActiveScene().buildIndex == 0) {
 			Destroy (gameObject);
 		}
 	}
