@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114678167152289684}
   - component: {fileID: 114500509894197506}
   - component: {fileID: 114093536181129914}
+  - component: {fileID: 114295045119626778}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -159,6 +160,17 @@ MonoBehaviour:
   coll: {fileID: 0}
   fallingThroughPlatformResetTimer: 0
   playerInput: {x: 0, y: 0}
+--- !u!114 &114295045119626778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288178359901058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6881ad568e9a024419230f0d78e2e2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114500509894197506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba971472e1abfe40ab1a4524a410b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
+  isDead: 0
   maxJumpHeight: 2
   minJumpHeight: 0.5
   timeToJumpApex: 0.4
