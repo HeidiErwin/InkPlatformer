@@ -6,6 +6,11 @@ public class Controller2D : RaycastController
     private float maxClimbAngle = 0f;
     private float maxDescendAngle = 80f;
 
+    public AudioClip walkSound;
+    private AudioSource source;
+    private bool stepSoundReadyToPlay = false;
+    private double stepTimeLeft = .8;
+
     public CollisionInfo collisions;
     [HideInInspector]
     public Vector2 playerInput;
@@ -13,7 +18,7 @@ public class Controller2D : RaycastController
     public override void Start()
     {
         base.Start();
-
+        source = GetComponent<AudioSource>();
         collisions.faceDir = 1;
     }
 
@@ -24,6 +29,21 @@ public class Controller2D : RaycastController
 
     public void Move(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false)
     {
+        stepTimeLeft = stepTimeLeft - Time.deltaTime;
+
+        if (stepTimeLeft < 0)
+        {
+            stepSoundReadyToPlay = true;
+        }
+
+        if(stepSoundReadyToPlay && moveAmount.magnitude > 0.03 && collisions.below == true) // && moveAmount.y > -.02 && moveAmount.y < 0.02)
+        {
+            Debug.Log(moveAmount.y + " is the move amt Y val");
+            source.PlayOneShot(walkSound, 1.0f);
+            stepSoundReadyToPlay = false;
+            stepTimeLeft = .8;
+        }
+
         UpdateRaycastOrigins();
         collisions.Reset();
         collisions.moveAmountOld = moveAmount;

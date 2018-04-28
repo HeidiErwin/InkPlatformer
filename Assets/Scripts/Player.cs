@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-    public AudioClip deathSound;
+
     public bool isDead = false;
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
 	private bool jumpable = true;
+
+    private bool deathSoundAlreadyPlayed = false;
+
+    public AudioClip deathSound;
+    public AudioClip jumpSound;
 
     public float wallSlideSpeedMax = 3f;
     public float wallStickTime = .25f;
@@ -78,10 +83,12 @@ public class Player : MonoBehaviour
     }
 
 	public void Death() {
-        source.clip = deathSound;
-        source.Play();
+        if(!deathSoundAlreadyPlayed)
+        {
+            source.PlayOneShot(deathSound, 1.0f);
+            deathSoundAlreadyPlayed = true;
+        }
         showRestartPopup = true;
-        source.PlayOneShot(deathSound, 1.0f);
         this.isDead = true;
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
@@ -104,6 +111,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
+        source.PlayOneShot(jumpSound, 1.0f);
         if (wallSliding)
         {
 			if (jumpable) {

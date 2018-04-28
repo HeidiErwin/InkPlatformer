@@ -347,12 +347,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 37
       objectReference: {fileID: 0}
-    - target: {fileID: 114612046528199430, guid: 58be54931bffa4163b0eae402e1210ae,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: 1496839292d5db04c84a44d33abec2e8, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c18f692cda0eba45b0b1315980e9edf, type: 3}
+    - target: {fileID: 0}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b06560c5b524e564ca3b79ea7ac67f28, type: 3}
+    - target: {fileID: 0}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b06560c5b524e564ca3b79ea7ac67f28, type: 3}
+    - target: {fileID: 114500509894197506, guid: 58be54931bffa4163b0eae402e1210ae,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114295045119626778, guid: 58be54931bffa4163b0eae402e1210ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 58be54931bffa4163b0eae402e1210ae, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &165806452
@@ -1578,8 +1595,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1496839292d5db04c84a44d33abec2e8, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1624,7 +1641,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1648,7 +1665,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &1548420321
 MonoBehaviour:
   m_ObjectHideFlags: 0
