@@ -7,8 +7,6 @@ public class WeaponDec : MonoBehaviour {
 	public float Damage = 10;
 	public LayerMask whatToHit;
 	public GameObject inkBallPrefab;
-
-	//float timeToFire = 0;
 	Transform firePoint;
 
 	// Use this for initialization
@@ -30,28 +28,18 @@ public class WeaponDec : MonoBehaviour {
 	}
 
 	void Shoot() {
-		//Debug.Log ("test");
 		Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
 		RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition, 10, whatToHit);
 
 		Effect((mousePosition - firePointPosition).normalized);
-		if (hit.collider != null) {
-			Debug.DrawLine(firePointPosition, hit.point, Color.red);
-			//hit.collider.GetComponent<Collider2D>();
-		}
 	}
 
 	void Effect(Vector2 dir) {
-		//Instantiate (BulletTrailPrefab, firePoint, firePoint.rotation);
-		// Vector2 p = new Vector2(firePoint.position.x, firePoint.position.y);
-		// Quaternion r = new Quaternion(firePoint.rotation.x, firePoint.rotation.y, firePoint.rotation.z, firePoint.rotation.w);
-		// Debug.Log("rotate " + r);
-		// Debug.Log("fp rotate " + firePoint.rotation);
-		Quaternion ray = new Quaternion(dir.x, dir.y, 0, 0);
+        //Quaternion ray = new Quaternion(dir.x, dir.y, 0, 0);
+        float angleDegree = Vector2.Angle(Vector2.right, dir);
 
-		//Debug.Log(p);
-		var b = (GameObject)Instantiate(inkBallPrefab, firePoint.position, ray);
+        var b = (GameObject)Instantiate(inkBallPrefab, firePoint.position, inkBallPrefab.transform.rotation);
 		b.GetComponent<InkBallScript>().SetDirection(dir);
 	}
 }

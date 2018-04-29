@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 114903439206493228}
   - component: {fileID: 114214524747607716}
   - component: {fileID: 114678167152289684}
-  - component: {fileID: 114500509894197506}
   - component: {fileID: 114093536181129914}
   - component: {fileID: 114295045119626778}
   - component: {fileID: 82208942381829486}
@@ -72,8 +71,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288178359901058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.26, y: 3.48, z: -10}
-  m_LocalScale: {x: 0.4397286, y: 0.4397286, z: 0.4397286}
+  m_LocalPosition: {x: -11.393, y: -2.346, z: -10}
+  m_LocalScale: {x: 0.11308135, y: 0.11308135, z: 0.11308135}
   m_Children:
   - {fileID: 4091191001781820}
   m_Father: {fileID: 0}
@@ -111,18 +110,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24761856, y: -0.24511367}
+  m_Offset: {x: -0.36043215, y: -0.8656249}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3.33}
+    oldSize: {x: 10, y: 13.06}
     newSize: {x: 3, y: 3.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4210985, y: 2.5301518}
+  m_Size: {x: 4.3543816, y: 8.960817}
   m_EdgeRadius: 0
 --- !u!82 &82208942381829486
 AudioSource:
@@ -219,7 +218,7 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 512
-  inkBallPrefab: {fileID: 1899466151972870, guid: 2934cdfc276625c45af76e5769517c01,
+  inkBallPrefab: {fileID: 1526524526081912, guid: ae6a184cd847d71428e4ec80aea0cb6f,
     type: 2}
 --- !u!114 &114164840362699832
 MonoBehaviour:
@@ -268,18 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6881ad568e9a024419230f0d78e2e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114500509894197506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1288178359901058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58bb5ac5225e2094f99f70a766469ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inkBall: {fileID: 1899466151972870, guid: 2934cdfc276625c45af76e5769517c01, type: 2}
 --- !u!114 &114678167152289684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,7 +334,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 9fcd75f4bb59f37438cd2b3e894a55c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c85d84ff636a1946959a43f1829b32f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

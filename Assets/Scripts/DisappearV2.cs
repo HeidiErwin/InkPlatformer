@@ -71,7 +71,7 @@ public class DisappearV2 : MonoBehaviour
         float waterOffset = waterPrefab.GetComponent<BoxCollider2D>().size.y * waterPrefab.transform.lossyScale.y / 2;
         pos.y = pos.y - gameObject.transform.localScale.y - waterOffset - boxOffset - 0.01f;
         var b = (GameObject)Instantiate(waterPrefab, pos, ray);
-        b.GetComponent<InkBallScript>().SetDirection(dir);
+        b.GetComponent<WaterfallScript>().SetDirection(dir);
 
     }
 
