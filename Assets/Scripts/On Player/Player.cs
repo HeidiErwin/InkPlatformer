@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
+    public Sprite deathSprite;
 
     public bool isDead = false;
     public float maxJumpHeight = 4f;
@@ -27,7 +28,6 @@ public class Player : MonoBehaviour
     private bool deathSoundAlreadyPlayed = false;
 
     public AudioClip deathSound;
-    public AudioClip jumpSound;
 
     public float wallSlideSpeedMax = 3f;
     public float wallStickTime = .25f;
@@ -46,7 +46,13 @@ public class Player : MonoBehaviour
     private bool wallSliding;
     private int wallDirX;
 
-    private bool showRestartPopup = false;
+    //private bool showRestartPopup = false;
+
+    private Animator anim;
+    public GameObject frontArm;
+    public GameObject backArm;
+
+    public GameObject RestartCanvas;
 
     private void Start()
     {
@@ -55,6 +61,7 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,9 +69,38 @@ public class Player : MonoBehaviour
         CalculateVelocity();
         HandleWallSliding();
 
+        if (velocity.x < 0)
+        {
+            transform.GetComponent<SpriteRenderer>().flipX = true;
+            frontArm.transform.GetComponent<SpriteRenderer>().flipX = true;
+            backArm.transform.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            transform.GetComponent<SpriteRenderer>().flipX = false;
+            frontArm.transform.GetComponent<SpriteRenderer>().flipX = false;
+            backArm.transform.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
         if (!isDead)
         {
             controller.Move(velocity * Time.deltaTime, directionalInput);
+            if(velocity.x != 0)
+            {
+                anim.SetBool("Moving", true);
+            }
+            else if (velocity.x == 0f)
+            {
+                anim.SetBool("Moving", false);
+            }
+            if(velocity.y > 0)
+            {
+                anim.SetBool("Jumping", true);
+            }
+            else if(velocity.y <= 0)
+            {
+                anim.SetBool("Jumping", false);
+            }
         }
 
         if (controller.collisions.above || controller.collisions.below)
@@ -88,16 +124,17 @@ public class Player : MonoBehaviour
             source.PlayOneShot(deathSound, 1.0f);
             deathSoundAlreadyPlayed = true;
         }
-        showRestartPopup = true;
+        RestartCanvas.SetActive(true);
+        //showRestartPopup = true;
         this.isDead = true;
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
-    void OnGUI()
-    {
-        if (showRestartPopup)
-            GUI.Label(new Rect(20, Screen.height-50, 100, 100), "Press 'R' to Restart Level");
-    }
+    //void OnGUI()
+    //{
+    //    if (showRestartPopup)
+    //        GUI.Label(new Rect(20, Screen.height-50, 100, 100), "Press 'R' to Restart Level");
+    //}
 
     //this was gonna handle spikes
     //	public void OnTriggerEnter2D(Collider2D other) {
@@ -111,7 +148,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-        source.PlayOneShot(jumpSound, 1.0f);
+        //source.PlayOneShot(jumpSound, 1.0f);
         if (wallSliding)
         {
 			if (jumpable) {

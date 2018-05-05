@@ -81,7 +81,7 @@ MonoBehaviour:
   NoInkSprite: {fileID: 21300000, guid: b78c7656db2747f478af4ab4bf83167f, type: 3}
   InkSprite: {fileID: 21300000, guid: c88c2bab46b5e8e4fa55b5bf06dd23b3, type: 3}
   dripTimerMax: 3
-  inkBallPrefab: {fileID: 1899466151972870, guid: 2934cdfc276625c45af76e5769517c01,
+  inkBallPrefab: {fileID: 1526524526081912, guid: 844d8573cce316843b8253bc29cad4b0,
     type: 2}
 --- !u!212 &212870706650021302
 SpriteRenderer:

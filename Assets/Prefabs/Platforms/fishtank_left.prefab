@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropWater: 1
   dropSpeed: 0.2
-  dripTimerMax: 3
-  inkBallPrefab: {fileID: 1899466151972870, guid: b66346aa698ef5e4e95759c615e7b100,
+  dripTimerMax: 5
+  inkBallPrefab: {fileID: 1526524526081912, guid: 844d8573cce316843b8253bc29cad4b0,
     type: 2}
   waterPrefab: {fileID: 1749983910026472, guid: 6aec08588e44e5f41b76d33bc633990d,
     type: 2}

@@ -14,6 +14,7 @@ public class BgmPlayer : MonoBehaviour {
 		} else if (instance != this || SceneManager.GetActiveScene().buildIndex == 0) {
 			Destroy (gameObject);
 		}
+        DontDestroyOnLoad(this);
 	}
 	
 	// Update is called once per frame

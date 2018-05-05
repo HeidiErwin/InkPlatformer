@@ -10,6 +10,21 @@ public class MainMenu : MonoBehaviour {
 		Application.Quit ();
 	}
 
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void Update()
     {
         //open menu if ESC pressed

@@ -72,7 +72,6 @@ public class DisappearV2 : MonoBehaviour
         pos.y = pos.y - gameObject.transform.localScale.y - waterOffset - boxOffset - 0.01f;
         var b = (GameObject)Instantiate(waterPrefab, pos, ray);
         b.GetComponent<WaterfallScript>().SetDirection(dir);
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

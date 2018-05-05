@@ -29,19 +29,19 @@ public class Controller2D : RaycastController
 
     public void Move(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false)
     {
-        stepTimeLeft = stepTimeLeft - Time.deltaTime;
+        //stepTimeLeft = stepTimeLeft - Time.deltaTime;
 
-        if (stepTimeLeft < 0)
-        {
-            stepSoundReadyToPlay = true;
-        }
+        //if (stepTimeLeft < 0)
+        //{
+        //    stepSoundReadyToPlay = true;
+        //}
 
-        if(stepSoundReadyToPlay && moveAmount.magnitude > 0.03 && collisions.below == true) // && moveAmount.y > -.02 && moveAmount.y < 0.02)
-        {
-            source.PlayOneShot(walkSound, 1.0f);
-            stepSoundReadyToPlay = false;
-            stepTimeLeft = .8;
-        }
+        //if(stepSoundReadyToPlay && moveAmount.magnitude > 0.03 && collisions.below == true) // && moveAmount.y > -.02 && moveAmount.y < 0.02)
+        //{
+        //    source.PlayOneShot(walkSound, 1.0f);
+        //    stepSoundReadyToPlay = false;
+        //    stepTimeLeft = .8;
+        //}
 
         UpdateRaycastOrigins();
         collisions.Reset();
